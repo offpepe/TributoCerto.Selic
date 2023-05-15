@@ -15,7 +15,7 @@ public class UpdateSelicTableJob : JobService
 
     public override Task StartAsync(CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Jobs agendados para {DataJob}", Expression.GetNextOccurrence(DateTime.UtcNow, TimeZoneInfo));
+        _logger.LogInformation("Job {Name} agendado para {DataJob}", nameof(UpdateSelicTableJob),Expression.GetNextOccurrence(DateTime.UtcNow, TimeZoneInfo));
         return base.StartAsync(cancellationToken);
     }
 
